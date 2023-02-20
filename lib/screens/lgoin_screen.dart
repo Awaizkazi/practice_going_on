@@ -5,6 +5,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var password = 
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -60,7 +61,7 @@ class LoginScreen extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  fillColor: Colors.indigo,
+                  fillColor: Colors.blue,
                   hintText: '************',
                 ),
               ),
