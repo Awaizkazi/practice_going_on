@@ -48,45 +48,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
               SizedBox(
                 height: 40,
               ),
-              // Container(
-              //   margin: EdgeInsets.all(15),
-              //   child: TextFormField(
-              //     decoration: InputDecoration(
-              //       prefixIcon: Icon(Icons.arrow_drop_down),
-              //       border: OutlineInputBorder(
-              //         borderRadius: BorderRadius.circular(15),
-              //       ),
-              //       fillColor: Color(0xffeaeaf2),
-              //       filled: true,
-              //       hintText: 'youremail@email.com',
-              //     ),
-              //   ),
-              // ),
-              // Container(
-              //   margin: EdgeInsets.all(15),
-              //   child: TextFormField(
-              //     decoration: InputDecoration(
-              //       prefixIcon: Icon(Icons.lock_rounded),
-              //       suffixIcon:
-              //           togglePassword(), // This will made as a Widget in the end of this page
-              //       border: OutlineInputBorder(
-              //         borderRadius: BorderRadius.circular(15),
-              //       ),
-              //       fillColor: Color(0xffeaeaf2),
-              //       filled: true,
-              //       hintText: '************',
-              //     ),
-              //     obscureText: obsecureText,
-              //   ),
-              // ),
-
               SizedBox(
                 height: 5,
               ),
               TemplateCustomTextField(
                 isPassword: false,
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

@@ -9,7 +9,6 @@ class SignUp2 extends StatefulWidget {
 
 class _SignUp2State extends State<SignUp2> {
   var obsecureText = false;
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,7 +29,23 @@ class _SignUp2State extends State<SignUp2> {
         body: SingleChildScrollView(
           reverse: true,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 12.0, horizontal: 10),
+                child: const Text(
+                  'Welcome Back Mate !😊',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12.0, vertical: 2.0),
+                child: const Text(
+                  'Lorem ipsum dolor sit amet\ndada dlfnafnoeahoi fuiafibdf',
+                ),
+              ),
               textField1(
                 icon: Icons.person,
                 hintText: 'Full Name',
@@ -50,6 +65,44 @@ class _SignUp2State extends State<SignUp2> {
               textField2(
                 icon: Icons.lock,
                 hintText: 'Repeat Password',
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SignUp2()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    backgroundColor: Color(0xff232476),
+                    minimumSize: Size.fromHeight(50),
+                  ),
+                  child: const Text(
+                    'Sign in',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+              Center(
+                child: Text(
+                  'or continue with',
+                  style: TextStyle(color: Colors.grey[500]),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    Icon(Icons.ac_unit),
+                    Text('Continuue with Google'),
+                  ],
+                ),
               ),
             ],
           ),
