@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  bool obsecureText = false;
+  @override
   Widget build(BuildContext context) {
-    var password = 
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -21,74 +26,90 @@ class LoginScreen extends StatelessWidget {
           ),
           centerTitle: true,
         ),
-        body: Column(
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            const Text(
-              'Welcome Back Mate !😊',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            const Text(
-              'Lorem ipsum dolor sit amet\n dada dlfnafnoeahoi fuiafibdf 😊',
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Container(
-              margin: EdgeInsets.all(15),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.arrow_drop_down),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
+        body: SingleChildScrollView(
+          // It Will Automatically Scroll the textfields in UPWARD Direction
+          reverse: true,
+          child: Column(
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              const Text(
+                'Welcome Back Mate !😊',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              const Text(
+                'Lorem ipsum dolor sit amet\n dada dlfnafnoeahoi fuiafibdf 😊',
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Container(
+                margin: EdgeInsets.all(15),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.arrow_drop_down),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    fillColor: Colors.indigo,
+                    hintText: 'youremail@email.com',
                   ),
-                  fillColor: Colors.indigo,
-                  hintText: 'youremail@email.com',
                 ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.all(15),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.lock_rounded),
-                  suffixIcon: Icon(Icons.remove_red_eye),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
+              Container(
+                margin: EdgeInsets.all(15),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.lock_rounded),
+                    suffixIcon: togglePassword(),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    fillColor: Colors.blue,
+                    hintText: '************',
                   ),
-                  fillColor: Colors.blue,
-                  hintText: '************',
+                  obscureText: obsecureText,
                 ),
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    backgroundColor: Colors.indigo[800],
+                    minimumSize: Size.fromHeight(50),
                   ),
-                  backgroundColor: Colors.indigo[800],
-                  minimumSize: Size.fromHeight(50),
-                ),
-                child: const Text(
-                  'Sign in',
-                  style: TextStyle(color: Colors.white),
+                  child: const Text(
+                    'Sign in',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  Widget togglePassword() {
+    return IconButton(
+      onPressed: () {
+        setState(() {
+          obsecureText = !obsecureText;
+        });
+      },
+      icon: obsecureText ? Icon(Icons.visibility) : Icon(Icons.visibility_off),
     );
   }
 }
