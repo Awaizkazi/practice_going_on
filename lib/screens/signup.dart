@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'otp_verification.dart';
+
 class SignUp2 extends StatefulWidget {
   const SignUp2({super.key});
 
@@ -73,7 +75,8 @@ class _SignUp2State extends State<SignUp2> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SignUp2()),
+                      MaterialPageRoute(
+                          builder: (context) => const otpVerification()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -84,8 +87,11 @@ class _SignUp2State extends State<SignUp2> {
                     minimumSize: Size.fromHeight(50),
                   ),
                   child: const Text(
-                    'Sign in',
-                    style: TextStyle(color: Colors.white),
+                    'Sign up',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18),
                   ),
                 ),
               ),
