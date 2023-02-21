@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
           centerTitle: true,
         ),
         body: SingleChildScrollView(
-          // It Will Automatically Scroll the textfields in UPWARD Direction
+          // It Will Automatically Scroll the textfields in UPWARD Direction by using the reverse property
           reverse: true,
           child: Column(
             children: [
@@ -76,7 +76,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 5,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20.0, vertical: 10),
+                    child: Text('Forgot Password ?'),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -94,6 +104,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
+              ),
+              Text(
+                'Dont have an account?',
               ),
             ],
           ),
