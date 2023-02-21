@@ -98,10 +98,14 @@ class _SignUp2State extends State<SignUp2> {
               ElevatedButton(
                 onPressed: () {},
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.ac_unit),
                     Text('Continuue with Google'),
                   ],
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 153, 153, 202),
                 ),
               ),
             ],
