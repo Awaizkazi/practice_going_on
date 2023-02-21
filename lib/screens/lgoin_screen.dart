@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_going_on/screens/sign_up.dart';
+import 'package:practice_going_on/screens/signup2.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -99,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const SignUpScreen()),
+                          builder: (context) => const SignUp2()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
