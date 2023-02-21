@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'lgoin_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {

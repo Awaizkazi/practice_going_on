@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_going_on/widgets/template_custom_textfield.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -47,20 +48,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
               SizedBox(
                 height: 40,
               ),
-              Container(
-                margin: EdgeInsets.all(15),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.arrow_drop_down),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    fillColor: Color(0xffeaeaf2),
-                    filled: true,
-                    hintText: 'youremail@email.com',
-                  ),
-                ),
-              ),
+              // Container(
+              //   margin: EdgeInsets.all(15),
+              //   child: TextFormField(
+              //     decoration: InputDecoration(
+              //       prefixIcon: Icon(Icons.arrow_drop_down),
+              //       border: OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(15),
+              //       ),
+              //       fillColor: Color(0xffeaeaf2),
+              //       filled: true,
+              //       hintText: 'youremail@email.com',
+              //     ),
+              //   ),
+              // ),
               // Container(
               //   margin: EdgeInsets.all(15),
               //   child: TextFormField(
@@ -78,13 +79,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
               //     obscureText: obsecureText,
               //   ),
               // ),
-             
+
               SizedBox(
                 height: 5,
               ),
-               textFields(
-                isFilled: true,prefixIcon: Icon(Icons.person)
+              TemplateCustomTextField(
+                isPassword: false,
               ),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -108,7 +110,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   child: const Text(
                     'Sign Up',
-                    style: TextStyle(color: Colors.white,fontSize: 18),
+                    style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ),
               ),
@@ -155,26 +157,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  Widget textFields({var isFilled = true, Widget? prefixIcon, var hintText}) {
-    var isfilled = true;
-    // Var for the prefix Icon
-    Widget? preficIcon;
-    return Container(
-      margin: EdgeInsets.all(15),
-      child: TextFormField(
-        decoration: InputDecoration(
-          prefixIcon: preficIcon,
-          suffixIcon:
-              togglePassword(), // This will made as a Widget in the end of this page
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          fillColor: Color(0xffeaeaf2),
-          filled: isfilled,
-          hintText: '************',
-        ),
-        obscureText: obsecureText,
-      ),
-    );
-  }
+//   Widget textFields({var isFilled = true, Widget? prefixIcon, var hintText}) {
+//     var isfilled = true;
+//     // Var for the prefix Icon
+//     Widget? preficIcon;
+//     return Container(
+//       margin: EdgeInsets.all(15),
+//       child: TemplateCustomTextField(
+//         isPassword: true,
+//       ),
+//     );
+//   }
+// }
 }
