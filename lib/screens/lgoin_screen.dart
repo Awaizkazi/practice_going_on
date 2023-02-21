@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_going_on/screens/sign_up.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -42,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 20,
               ),
               const Text(
-                'Lorem ipsum dolor sit amet\n dada dlfnafnoeahoi fuiafibdf 😊',
+                'Lorem ipsum dolor sit amet\n dada dlfnafnoeahoi fuiafibdf',
               ),
               SizedBox(
                 height: 40,
@@ -94,7 +95,13 @@ class _LoginScreenState extends State<LoginScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpScreen()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
@@ -115,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Dont have an account?',
+                    'Already have an account Sign?',
                     style: TextStyle(
                       color: Color.fromARGB(255, 44, 44, 117),
                     ),
@@ -124,7 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: 10,
                   ),
                   Text(
-                    'Sign Up',
+                    'Sign In',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 15,

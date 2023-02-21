@@ -21,7 +21,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             color: Colors.black,
           ),
           title: const Text(
-            'Sign In',
+            'Sign Up',
             style: TextStyle(color: Colors.black),
           ),
           centerTitle: true,
@@ -42,7 +42,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 20,
               ),
               const Text(
-                'Lorem ipsum dolor sit amet\n dada dlfnafnoeahoi fuiafibdf 😊',
+                'Lorem ipsum dolor sit amet\n dada dlfnafnoeahoi fuiafibdf',
               ),
               SizedBox(
                 height: 40,
@@ -148,6 +148,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
         });
       },
       icon: obsecureText ? Icon(Icons.visibility) : Icon(Icons.visibility_off),
+    );
+  }
+
+  Widget textFields(isfilled) {
+    var isfilled = false;
+    // Var for the prefix Icon
+    Widget? preficIcon;
+    return Container(
+      margin: EdgeInsets.all(15),
+      child: TextFormField(
+        decoration: InputDecoration(
+          prefixIcon: preficIcon,
+          suffixIcon:
+              togglePassword(), // This will made as a Widget in the end of this page
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          fillColor: Color(0xffeaeaf2),
+          filled: isfilled,
+          hintText: '************',
+        ),
+        obscureText: obsecureText,
+      ),
     );
   }
 }
