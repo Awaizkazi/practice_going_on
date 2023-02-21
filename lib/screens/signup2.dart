@@ -95,18 +95,58 @@ class _SignUp2State extends State<SignUp2> {
                   style: TextStyle(color: Colors.grey[500]),
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.ac_unit),
-                    Text('Continuue with Google'),
-                  ],
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/images/google.webp'),
+                        backgroundColor: Colors.transparent,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        'Continuue with Google',
+                        style: TextStyle(
+                          color: Color(0xff232476),
+                        ),
+                      ),
+                    ],
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 203, 203, 223),
+                  ),
                 ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 153, 153, 202),
-                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Already have an account Sign?',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 44, 44, 117),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    'Sign In',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.indigo[800],
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -117,7 +157,7 @@ class _SignUp2State extends State<SignUp2> {
 
   Widget textField1({IconData? icon, String? hintText, Function? suffixIcon}) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
       child: TextFormField(
         decoration: InputDecoration(
           border: OutlineInputBorder(
@@ -136,7 +176,7 @@ class _SignUp2State extends State<SignUp2> {
 
   Widget textField2({IconData? icon, String? hintText, Function? suffixIcon}) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
       child: TextFormField(
         decoration: InputDecoration(
           border: OutlineInputBorder(
