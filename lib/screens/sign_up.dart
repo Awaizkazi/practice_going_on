@@ -61,25 +61,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.all(15),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.lock_rounded),
-                    suffixIcon:
-                        togglePassword(), // This will made as a Widget in the end of this page
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    fillColor: Color(0xffeaeaf2),
-                    filled: true,
-                    hintText: '************',
-                  ),
-                  obscureText: obsecureText,
-                ),
-              ),
+              // Container(
+              //   margin: EdgeInsets.all(15),
+              //   child: TextFormField(
+              //     decoration: InputDecoration(
+              //       prefixIcon: Icon(Icons.lock_rounded),
+              //       suffixIcon:
+              //           togglePassword(), // This will made as a Widget in the end of this page
+              //       border: OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(15),
+              //       ),
+              //       fillColor: Color(0xffeaeaf2),
+              //       filled: true,
+              //       hintText: '************',
+              //     ),
+              //     obscureText: obsecureText,
+              //   ),
+              // ),
+             
               SizedBox(
                 height: 5,
+              ),
+               textFields(
+                isFilled: true,prefixIcon: Icon(Icons.person)
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -103,8 +107,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     minimumSize: Size.fromHeight(50),
                   ),
                   child: const Text(
-                    'Sign in',
-                    style: TextStyle(color: Colors.white),
+                    'Sign Up',
+                    style: TextStyle(color: Colors.white,fontSize: 18),
                   ),
                 ),
               ),
@@ -151,8 +155,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  Widget textFields(isfilled) {
-    var isfilled = false;
+  Widget textFields({var isFilled = true, Widget? prefixIcon, var hintText}) {
+    var isfilled = true;
     // Var for the prefix Icon
     Widget? preficIcon;
     return Container(
