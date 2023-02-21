@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
+import 'home.dart';
+
 class otpVerification extends StatefulWidget {
   const otpVerification({super.key});
 
@@ -70,7 +72,7 @@ class _otpVerificationState extends State<otpVerification> {
               ],
             ),
             SizedBox(
-              height: 40,
+              height: 30,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -100,7 +102,54 @@ class _otpVerificationState extends State<otpVerification> {
                   }, // end onSubmit
                 ),
               ],
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 40),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  backgroundColor: Colors.indigo[800],
+                  minimumSize: Size.fromHeight(60),
+                ),
+                child: const Text(
+                  'Verify',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 10),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  backgroundColor: Color(0xffeaeaf2),
+                  minimumSize: Size.fromHeight(60),
+                ),
+                child: const Text(
+                  'Resend OTP Code',
+                  style: TextStyle(color: Colors.indigo),
+                ),
+              ),
+            ),
           ],
         ),
       ),
